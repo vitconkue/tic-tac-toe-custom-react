@@ -97,19 +97,7 @@ function checkWinningColumn(squares, winningNumber, numberOfColumn, numberOfRow)
   return result;
 }
 
-function checkWinningDiagonal(squares, winningNumber, numberOfColumn, numberOfRow)
-{
-  const XWinArray = Array(winningNumber).fill("X");
-  const OWinArray = Array(winningNumber).fill("O");
 
-  const result = {winner : null};
-  // TODO: create the arrays of diagonals
-
-  // TODO: check in diagonals
-
-  // TODO: return result
-  return null;
-}
 
 export function calculateWinnerFinal(squares, winningNumber, numberOfColumn, numberOfRow)
 {
@@ -127,38 +115,6 @@ export function calculateWinnerFinal(squares, winningNumber, numberOfColumn, num
   }
 
   return {winner: null};
-}
-
-
-export default function calculateWinnerAdvanced(
-  squares,
-  winningNumber,
-  numberOfColumn,
-  numberOfRow
-) {
- 
-  const lines = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-  ];
-  for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return {
-        winner: squares[a],
-        winningSquare: lines[i],
-      };
-    }
-  }
-  return {
-    winner: null,
-  };
 }
 
 

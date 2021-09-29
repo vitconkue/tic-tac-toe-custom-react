@@ -1,33 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import calculateWinnerAdvanced from "./gameLogic.js";
 import { calculateWinnerFinal } from "./gameLogic.js";
 
-function calculateWinner(squares) {
-  const lines = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-  ];
-  for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return {
-        winner: squares[a],
-        winningSquare: lines[i],
-      };
-    }
-  }
-  return {
-    winner: null,
-  };
-}
+
 
 const Square = ({ value, onClick, isHightlight }) => {
   return (
@@ -218,15 +194,16 @@ const GameFactory = () => {
   return (
       <>
         <Game numberOfColumn={numberOfColumn} numberOfRow={numberOfRow} winningNumber={winningNumber}/>
+      <hr></hr>
         <div className= "gameFactory">
-          <label>Number of Column: </label>
+          <label>No. col.: </label>
           <input
               id="inputNumberOfColumn"
               value={numberOfColumn}
               type = "number"
               onChange={handleChangeNumberOfColumn}
           />
-          <label>Number of Row: </label>
+          <label>No. row: </label>
           <input
               id="inputNumberOfColumn"
               value={numberOfRow}
@@ -234,7 +211,7 @@ const GameFactory = () => {
               onChange={handleChangeNumberOfRow}
           />
 
-          <label>Winning number:  </label>
+          <label>Winning:  </label>
           <input
               id="inputNumberOfColumn"
               value={winningNumber}
