@@ -210,6 +210,11 @@ const GameFactory = () => {
 
   }
 
+  const handleChangeWinningNumber = (event) => {
+    const intWinningNumber = parseInt(event.target.value);
+    setWinningNumber(intWinningNumber);
+  }
+
   return (
       <>
         <Game numberOfColumn={numberOfColumn} numberOfRow={numberOfRow} winningNumber={winningNumber}/>
@@ -227,6 +232,14 @@ const GameFactory = () => {
               value={numberOfRow}
               type = "number"
               onChange={handleChangeNumberOfRow}
+          />
+
+          <label>Winning number:  </label>
+          <input
+              id="inputNumberOfColumn"
+              value={winningNumber}
+              type = "number"
+              onChange={handleChangeWinningNumber}
           />
         </div>
       </>
