@@ -176,12 +176,26 @@ const GameFactory = () => {
   const [winningNumber, setWinningNumber] = React.useState(3);
 
   const handleChangeNumberOfColumn = (event) => {
+   
     const intNumberOfColumn = parseInt(event.target.value);
+    if( isNaN(intNumberOfColumn) || intNumberOfColumn < 2)
+    {
+      setNumberOfColumn(3);
+      return;
+    }
     setNumberOfColumn(intNumberOfColumn);
+    
+   
   }
 
   const handleChangeNumberOfRow = (event) => {
+   
     const intNumberOfRow = parseInt(event.target.value);
+    if( isNaN(intNumberOfRow) || intNumberOfRow < 2)
+    {
+      setNumberOfRow(3);
+      return;
+    }
     setNumberOfRow(intNumberOfRow);
 
   }
