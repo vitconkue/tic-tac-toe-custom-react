@@ -214,12 +214,14 @@ const GameFactory = () => {
       <>
         <Game numberOfColumn={numberOfColumn} numberOfRow={numberOfRow} winningNumber={winningNumber}/>
         <div className= "gameFactory">
+          <label>Number of Column: </label>
           <input
               id="inputNumberOfColumn"
               value={numberOfColumn}
               type = "number"
               onChange={handleChangeNumberOfColumn}
           />
+          <label>Number of Row: </label>
           <input
               id="inputNumberOfColumn"
               value={numberOfRow}
